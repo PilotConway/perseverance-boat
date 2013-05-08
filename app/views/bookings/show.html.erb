@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-<div id='calendar'></div>
-<!-- 
 <p>
   <b>Start time:</b>
   <%= @booking.start %>
@@ -16,7 +14,22 @@
   <%= @booking.num_people %>
 </p>
 
+<p>
+  <b>Spots Available:</b>
+  <%= @booking.getSpotsAvailable %>
+</p>
+
+<p>
+  <b>Guests:</b>
+  <ul>
+  <% @booking.people.each do |p| %>
+    <li><%= link_to "#{p.first_name} #{p.last_name}", p %></li>
+  <% end %>
+  </ul>
+  <% if @booking.people.empty? %>
+    <em>No Guests</em>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>
--->
