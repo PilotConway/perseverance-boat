@@ -55,3 +55,261 @@ Served asset /rails.png - 304 Not Modified (0ms)
 
 Started GET "/assets/rails.png" for 127.0.0.1 at 2013-05-07 21:24:27 -0400
 Served asset /rails.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (28.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateBookings (20130508015249)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "start_time" datetime, "end_time" datetime, "num_people" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130508015249')[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateDestinations (20130508015440)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "destinations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130508015440')[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateCoordinates (20130508015515)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "coordinates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" float, "longitude" float, "elevation" float, "azimuth" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130508015515')[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreatePeople (20130508015710)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "phone" varchar(255), "preferred_contact" varchar(255), "over_three" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130508015710')[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateRoles (20130508015757)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130508015757')[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateGuests (20130508015907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "guests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "booking_id" integer, "guest_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130508015907')[0m
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+DEPRECATION WARNING: You're trying to create an attribute `person_id'. Writing arbitrary attributes on a model is deprecated. Please just use `attr_writer` etc. (called from irb_binding at (irb):11)
+SQLite3::SQLException: no such column: guests.person_id: SELECT "people".* FROM "people" INNER JOIN "guests" ON "people"."id" = "guests"."person_id" WHERE "guests"."booking_id" = 1
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (57.5ms)[0m  ALTER TABLE "person" ADD "booking_id" integer
+SQLite3::SQLException: no such table: person: ALTER TABLE "person" ADD "booking_id" integer
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "person" ADD "booking_id" integer
+SQLite3::SQLException: no such table: person: ALTER TABLE "person" ADD "booking_id" integer
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "person" ADD "booking_id" integer
+SQLite3::SQLException: no such table: person: ALTER TABLE "person" ADD "booking_id" integer
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "people" ADD "booking_id" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "people" ADD "guest_id" integer[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130508020842')
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "booking" ADD "people_id" integer[0m
+SQLite3::SQLException: no such table: booking: ALTER TABLE "booking" ADD "people_id" integer
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "bookings" ADD "people_id" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "bookings" ADD "guest_id" integer[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130508020954')
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddCoordinateToDestination (20130508021114)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "destination" ADD "coordinate_id" integer[0m
+SQLite3::SQLException: no such table: destination: ALTER TABLE "destination" ADD "coordinate_id" integer
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+Migrating to AddCoordinateToDestination (20130508021114)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "destinations" ADD "coordinate_id" integer
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130508021114')[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+DEPRECATION WARNING: You're trying to create an attribute `person_id'. Writing arbitrary attributes on a model is deprecated. Please just use `attr_writer` etc. (called from irb_binding at (irb):8)
+SQLite3::SQLException: no such column: guests.person_id: SELECT "people".* FROM "people" INNER JOIN "guests" ON "people"."id" = "guests"."person_id" WHERE "guests"."booking_id" = 1
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+Migrating to AddCoordinateToDestination (20130508021114)
+Migrating to RenameGuestToPersonInGuests (20130508021905)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+Migrating to AddCoordinateToDestination (20130508021114)
+Migrating to RenameGuestToPersonInGuests (20130508021905)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+Migrating to AddCoordinateToDestination (20130508021114)
+Migrating to RenameGuestToPersonInGuests (20130508021905)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+Migrating to AddCoordinateToDestination (20130508021114)
+Migrating to RenameGuestToPersonInGuests (20130508021905)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBookings (20130508015249)
+Migrating to CreateDestinations (20130508015440)
+Migrating to CreateCoordinates (20130508015515)
+Migrating to CreatePeople (20130508015710)
+Migrating to CreateRoles (20130508015757)
+Migrating to CreateGuests (20130508015907)
+Migrating to AddBookingAndGuestToPerson (20130508020842)
+Migrating to AddPersonAndGuestToBooking (20130508020954)
+Migrating to AddCoordinateToDestination (20130508021114)
+Migrating to RenameGuestToPersonInGuests (20130508021905)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TEMPORARY TABLE "altered_guests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "booking_id" integer, "person_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "guests"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_guests" ("id","booking_id","person_id","created_at","updated_at") VALUES (1, 1, NULL, '2013-05-08 02:05:05.025361', '2013-05-08 02:05:05.025361')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_guests" ("id","booking_id","person_id","created_at","updated_at") VALUES (2, 1, NULL, '2013-05-08 02:15:52.689807', '2013-05-08 02:15:52.689807')[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "guests"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "guests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "booking_id" integer, "person_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_guests"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "guests" ("id","booking_id","person_id","created_at","updated_at") VALUES (1, 1, NULL, '2013-05-08 02:05:05.025361', '2013-05-08 02:05:05.025361')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "guests" ("id","booking_id","person_id","created_at","updated_at") VALUES (2, 1, NULL, '2013-05-08 02:15:52.689807', '2013-05-08 02:15:52.689807')
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "altered_guests"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130508021905')
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml

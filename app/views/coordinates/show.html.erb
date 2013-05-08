@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @coordinate.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @coordinate.longitude %>
+</p>
+
+<p>
+  <b>Elevation:</b>
+  <%= @coordinate.elevation %>
+</p>
+
+<p>
+  <b>Azimuth:</b>
+  <%= @coordinate.azimuth %>
+</p>
+
+
+<%= link_to 'Edit', edit_coordinate_path(@coordinate) %> |
+<%= link_to 'Back', coordinates_path %>
