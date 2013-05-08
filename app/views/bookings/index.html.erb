@@ -1,5 +1,14 @@
-<h1>Listing bookings</h1>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var calendar = $('#calendar')
+    calendar.fullCalendar('addEventSource', '<%= url_for :controller => :bookings, :action => :index, :format => :json %>'); 
+  }); 
+</script>
+<h1>Bookings</h1>
 
+<div id='calendar'></div>
+
+<!--
 <table>
   <tr>
     <th>Start time</th>
@@ -12,8 +21,8 @@
 
 <% @bookings.each do |booking| %>
   <tr>
-    <td><%= booking.start_time %></td>
-    <td><%= booking.end_time %></td>
+    <td><%= booking.start %></td>
+    <td><%= booking.end %></td>
     <td><%= booking.num_people %></td>
     <td><%= link_to 'Show', booking %></td>
     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
@@ -25,3 +34,4 @@
 <br />
 
 <%= link_to 'New Booking', new_booking_path %>
+-->

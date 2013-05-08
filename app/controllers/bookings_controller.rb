@@ -1,8 +1,12 @@
+require 'date'
+
 class BookingsController < ApplicationController
+  before_filter :getBookingsWithinDates, :only => [:index]
+
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = @bookingWithinDates
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +83,12 @@ class BookingsController < ApplicationController
       format.html { redirect_to bookings_url }
       format.json { head :no_content }
     end
+  end
+
+  def getBookingsWithinDates
+    startDate = Time.at(params[:start].to_i).to_datetime
+    endDate = Time.at(params[:end].to_i).to_datetime
+    
+    @bookingWithinDates = Booking.where(:start => startDate..endDate)
   end
 end

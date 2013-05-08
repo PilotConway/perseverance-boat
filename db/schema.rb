@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508021905) do
+ActiveRecord::Schema.define(:version => 20130508035341) do
 
   create_table "bookings", :force => true do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.string   "num_people"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "start"
+    t.datetime "end"
+    t.integer  "num_people", :limit => 255
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "people_id"
     t.integer  "guest_id"
   end
