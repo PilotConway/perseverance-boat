@@ -1,21 +1,12 @@
 PerseveranceBoat::Application.routes.draw do
   resources :guests
-
-
   resources :roles
-
-
   resources :people
-
-
   resources :coordinates
-
-
   resources :destinations
-
-
   resources :bookings
 
+  root :to => 'bookings#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
