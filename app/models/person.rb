@@ -3,4 +3,6 @@ class Person < ActiveRecord::Base
   has_many :guests 
   has_many :bookings, :through => :guests
   has_one :role
+
+  scope :overthree, where(:over_three=>true)
 end
