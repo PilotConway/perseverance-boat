@@ -37,6 +37,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    coffeebeans (1.0.1)
+      actionpack (>= 3.0.0)
+      coffee-script
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -106,6 +109,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  coffeebeans
   jquery-rails
   pg
   rails (= 3.2.13)
