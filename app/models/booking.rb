@@ -5,6 +5,7 @@ class Booking < ActiveRecord::Base
   has_one :destination
   has_many :guests
   has_many :people, :through => :guests
+  accepts_nested_attributes_for :people
 
   def getSpotsAvailable
     @spots_available = num_people - people.length
