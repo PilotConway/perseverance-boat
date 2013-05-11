@@ -4,7 +4,7 @@
   # Initialize the Calendar with the event source url 
   root = exports ? this
   $(document).ready ->
-    calendar = new root.Calendar '<%= url_for :controller => :bookings, :action => :index, :format => :json %>'
+    calendar = new root.Calendar '<%= url_for :controller => :bookings, :action => :index, :format => :json %>', '<%= url_for :controller => :bookings %>'
 <% end %>
 
 <h1>Bookings</h1>
