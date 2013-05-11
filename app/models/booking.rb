@@ -5,11 +5,19 @@ class Booking < ActiveRecord::Base
   has_one :destination
   has_many :guests
   has_many :people, :through => :guests
-  accepts_nested_attributes_for :people
+  before_update :areSpotsAvaiable
 
   def getSpotsAvailable
     @spots_available = num_people - people.length
   end
+
+  def areSpotsAvaiable
+    if @spots_available > 0 
+      true
+    else 
+      false
+    end
+   end
 
   def as_json(options={})
       super(:methods => :title)
