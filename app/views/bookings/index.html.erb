@@ -1,37 +1,13 @@
-<script type="text/javascript">
-  $(document).ready(function(){
-    var calendar = $('#calendar')
-    calendar.fullCalendar('addEventSource', '<%= url_for :controller => :bookings, :action => :index, :format => :json %>'); 
-  }); 
-</script>
+<%= javascript_include_tag "calendar" %>
+
+<%= coffee_script_tag do %>
+  # Initialize the Calendar with the event source url 
+  root = exports ? this
+  $(document).ready ->
+    calendar = new root.Calendar '<%= url_for :controller => :bookings, :action => :index, :format => :json %>'
+<% end %>
+
 <h1>Bookings</h1>
 
 <div id='calendar'></div>
 
-<!--
-<table>
-  <tr>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Num people</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @bookings.each do |booking| %>
-  <tr>
-    <td><%= booking.start %></td>
-    <td><%= booking.end %></td>
-    <td><%= booking.num_people %></td>
-    <td><%= link_to 'Show', booking %></td>
-    <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-    <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Booking', new_booking_path %>
--->
