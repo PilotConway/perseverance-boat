@@ -8,7 +8,11 @@ class Booking < ActiveRecord::Base
   before_update :areSpotsAvaiable
 
   def getSpotsAvailable
-    @spots_available = num_people - people.length
+    if num_people && people 
+      @spots_available = num_people - people.overthree.length 
+    else 
+      @spots_available = 0
+    end
   end
 
   def areSpotsAvaiable
@@ -17,7 +21,7 @@ class Booking < ActiveRecord::Base
     else 
       false
     end
-   end
+  end
 
   def as_json(options={})
       super(:methods => :title)
