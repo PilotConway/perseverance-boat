@@ -4,7 +4,9 @@ PerseveranceBoat::Application.routes.draw do
   resources :people
   resources :coordinates
   resources :destinations
-  resources :bookings
+  resources :bookings do
+    resources :people
+  end
 
   root :to => 'bookings#index'
 
