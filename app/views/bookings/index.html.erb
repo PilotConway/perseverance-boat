@@ -3,6 +3,7 @@
   root = exports ? this
   $(document).ready ->
     calendar = new root.Calendar '<%= url_for bookings_path(:format => :json) %>', '<%= url_for bookings_path %>'
+    $('#book-nav-link').addClass('selected')
 <% end %>
 
 <h1>Bookings</h1>
