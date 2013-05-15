@@ -2,17 +2,63 @@ $large-radius: 10px;
 $radius: 4px; 
 $background: rgba(164,190,220,.8); 
 $content-background: rgba(255,255,255,1); 
+$header-background: rgba(0,0,0,1); 
+$border-color: rgba(184, 184, 184, .5); 
 
 body { 
     background: $background; 
+    margin: 0; 
+}
+
+.page-body { 
+    width: 75%; 
+    margin: 0 auto; 
+    padding: 0; 
+}
+
+.header { 
+    background: $header-background; 
+    height: 30px; 
+    border: solid 1px $header-background; 
+    color: $border-color; 
+
+    .selected a, a:hover { 
+      color: white; 
+    }
+
+    a {
+      text-decoration: none; 
+    }
+
+    div { 
+      padding: 3px 20px; 
+    }
+
+    .icon { 
+      width: 300px; 
+    }
+
+    .nav-link, .right { 
+      float: right;
+    }
+
+    .nav-link { 
+        border-left: solid 1px $border-color; 
+    } 
+
+    .left { 
+      float: left;
+    } 
+}
+
+.content { 
+    background: $content-background; 
+    border: solid 1px $border-color; 
+    border-top: solid 0px; 
 }
 
 .center-content {
-    background: $content-background; 
-    width: 75%; 
     padding: 20px; 
-    margin: 0 auto; 
-    border: solid 1px rgba(184, 184, 184, .5); 
 }
 
 .block-corner-large-right {
@@ -25,6 +71,11 @@ body {
     border-bottom-left-radius: $large-radius; 
 }
 
+.block-corner-large-bottom {
+    border-bottom-left-radius: $large-radius; 
+    border-bottom-right-radius: $large-radius; 
+}
+
 .block-corner-right {
     border-top-right-radius: $radius; 
     border-bottom-right-radius: $radius; 
@@ -34,3 +85,4 @@ body {
     border-top-left-radius: $radius; 
     border-bottom-left-radius: $radius; 
 }
+
