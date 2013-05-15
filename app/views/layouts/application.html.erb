@@ -8,8 +8,32 @@
 </head>
 <body>
 
-<div class="center-content block-corner-large-right block-corner-large-left">
-  <%= yield %>
+<div class="page-body">
+  <div class="header">
+    <div class="left">
+        <div class="icon">
+          <%= link_to "Perseverance", root_url %>
+        </div>
+    </div>
+    <div class="right">
+      <div class="nav-link">
+          Admin
+      </div>
+      <div class="nav-link">
+          Gallery
+      </div>
+      <div class="nav-link">
+          Rules
+      </div>
+      <div class="nav-link selected">
+          <%= link_to "Book", bookings_path %>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-content content block-corner-large-bottom">
+    <%= yield %>
+  </div>
 </div>
 
 </body>
