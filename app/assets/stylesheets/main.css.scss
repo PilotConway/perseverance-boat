@@ -1,0 +1,36 @@
+$large-radius: 10px; 
+$radius: 4px; 
+$background: rgba(164,190,220,.8); 
+$content-background: rgba(255,255,255,1); 
+
+body { 
+    background: $background; 
+}
+
+.center-content {
+    background: $content-background; 
+    width: 75%; 
+    padding: 20px; 
+    margin: 0 auto; 
+    border: solid 1px rgba(184, 184, 184, .5); 
+}
+
+.block-corner-large-right {
+    border-top-right-radius: $large-radius; 
+    border-bottom-right-radius: $large-radius; 
+}
+
+.block-corner-large-left {
+    border-top-left-radius: $large-radius; 
+    border-bottom-left-radius: $large-radius; 
+}
+
+.block-corner-right {
+    border-top-right-radius: $radius; 
+    border-bottom-right-radius: $radius; 
+}
+
+.block-corner-left {
+    border-top-left-radius: $radius; 
+    border-bottom-left-radius: $radius; 
+}
