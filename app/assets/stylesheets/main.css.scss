@@ -4,6 +4,17 @@ $background: rgba(164,190,220,.8);
 $content-background: rgba(255,255,255,1); 
 $header-background: rgba(0,0,0,1); 
 $border-color: rgba(184, 184, 184, .5); 
+$center: 0 auto; 
+
+.group:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+  }
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
 
 body { 
     background: $background; 
@@ -13,7 +24,11 @@ body {
 .page-body { 
     padding: 0; 
     width: 75%; 
-    margin: 0 auto; 
+    margin: $center; 
+}
+
+.center-content { 
+  margin: $center; 
 }
 
 .header { 
@@ -112,7 +127,7 @@ body {
 
       .right { 
         width: auto; 
-        margin: 0 auto; 
+        margin: $center; 
       }
 
       span { 

@@ -1,0 +1,42 @@
+.home-header { 
+    font-size: 24pt; 
+    @media screen and (max-device-width: 520px) {
+      font-size: 18pt; 
+    }
+    text-align: center; 
+    width: auto; 
+}
+
+.home-image { 
+  width: auto; 
+
+  @media screen and (max-device-width: 520px) {
+    width: 100%; 
+  }
+}
+
+.home-image img { 
+  display: block;
+  width: 60%; 
+  margin: 0 auto; 
+  @media screen and (max-device-width: 520px) {
+    width: 100%; 
+    margin: 0; 
+  }
+}
+
+.home-buttons { 
+    text-align: center; 
+    a, span { 
+      text-decoration: none; 
+      display: inline-block;
+      margin: 0 auto; 
+    }
+    padding-top: 20px; 
+    width: 100%; 
+    margin: 0 auto; 
+
+    .button { 
+        padding: 20px; 
+    }
+}
