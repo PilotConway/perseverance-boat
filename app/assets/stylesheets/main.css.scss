@@ -37,7 +37,6 @@ body {
     border: solid 1px $header-background; 
     color: $border-color; 
 
-
     .selected a, a:hover { 
       color: white; 
     }
@@ -47,20 +46,24 @@ body {
     }
 
     div, span { 
-      padding: 3px 17px 3px 20px; 
+      display: inline-block; 
+      padding: 2px 17px 3px 20px; 
     }
 
     .right { 
       float: right;
+
+      .nav-link { 
+        border-left: solid 1px $border-color; 
+      }
     }
 
     .left { 
-      float: left;
+      overflow: hidden;
     } 
 
     .nav-link { 
       display: inline-block;
-      border-left: solid 1px $border-color; 
       text-align: center; 
     } 
 }
@@ -111,9 +114,6 @@ body {
   }
 
   @media screen and (max-device-width: 520px) {
-    .body { 
-    }
-
     .page-body { 
       height: auto; 
     }
@@ -121,13 +121,17 @@ body {
     .header { 
       height: 40px; 
 
-      .icon { 
-        display: none; 
+      .right { 
+        padding-top:8px; 
+        width: auto; 
+
+        span:last-child { 
+            display: none; 
+        }
       }
 
-      .right { 
-        width: auto; 
-        margin: $center; 
+      .left { 
+        display: none; 
       }
 
       span { 
@@ -135,8 +139,8 @@ body {
         padding-right:13px; 
       }
 
-      span:last-child { 
-        border-right: 1px solid; 
+      .right span:first-child { 
+        border: none;    
       }
     }
   }
