@@ -4,8 +4,7 @@ class Booking < ActiveRecord::Base
   attr_accessible :end, :num_people, :start
   has_one :destination
   has_many :guests
-  has_many :people, :through => :guests
-  before_update :areSpotsAvaiable
+  has_many :people, :through => :guests, after_add: :validateSpotsAvaiable
 
   def getSpotsAvailable
     if num_people && people 
@@ -20,6 +19,14 @@ class Booking < ActiveRecord::Base
       true
     else 
       false
+    end
+  end 
+
+  def validateSpotsAvaiable(person)
+    if person.over_three
+      areSpotsAvaiable
+    else
+      true
     end
   end
 

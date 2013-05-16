@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=10.0; user-scalable=1;" />
 </head>
 <body>
 
@@ -16,18 +17,10 @@
         </div>
     </div>
     <div class="right">
-      <div id="admin-nav-link" class="nav-link">
-          Admin
-      </div>
-      <div id="gallery-nav-link" class="nav-link">
-          Gallery
-      </div>
-      <div id="rules-nav-link" class="nav-link">
-          Rules
-      </div>
-      <div id="book-nav-link" class="nav-link">
-          <%= link_to "Book", bookings_path %>
-      </div>
+      <span id="book-nav-link" class="nav-link"><%= link_to "Book", bookings_path %></span>
+      <span id="rules-nav-link" class="nav-link">Rules</span>
+      <span id="gallery-nav-link" class="nav-link">Gallery</span>
+      <span id="admin-nav-link" class="nav-link">Admin</span>
     </div>
   </div>
 

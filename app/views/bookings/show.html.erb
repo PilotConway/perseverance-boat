@@ -16,14 +16,18 @@
 
 <p>
   <b>Spots Available:</b>
-  <%= @booking.getSpotsAvailable %>
+  <% if @booking.areSpotsAvaiable %> 
+    <%= @booking.getSpotsAvailable %>
+  <% else %>
+    Trip is Full
+  <% end %>
 </p>
 
 <p>
   <b>Guests:</b>
   <ul>
   <% @booking.people.each do |p| %>
-    <li><%= link_to "#{p.first_name} #{p.last_name}", booking_person_path(@booking, p) %></li>
+    <li><%= link_to "#{p.first_name} #{p.last_name}", booking_person_path(@booking, p) %> | <%= link_to 'Remove', booking_person_path(@booking, p), confirm: "Are You Sure", method: :delete %></li> 
   <% end %>
   </ul>
   <% if @booking.people.empty? %>
@@ -31,6 +35,10 @@
   <% end %>
 </p>
 
+<% if @booking.areSpotsAvaiable %> 
 <%= link_to 'Book', new_booking_person_path(@booking) %> |
+<% else %>
+<%= link_to 'Book Under 3 Only', new_booking_person_path(@booking) %> |
+<% end %>
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>

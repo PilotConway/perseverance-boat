@@ -3,6 +3,7 @@ class Person < ActiveRecord::Base
   has_many :guests 
   has_many :bookings, :through => :guests
   has_one :role
+  validates_associated :bookings
 
   scope :overthree, where(:over_three=>true)
 end

@@ -59,7 +59,6 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
-    puts @booking
     if @booking 
       @person = @booking.people.create(params[:person])
     else
@@ -101,7 +100,7 @@ class PeopleController < ApplicationController
     @person.destroy
 
     respond_to do |format|
-      format.html { redirect_to people_url }
+      format.html { redirect_to @booking }
       format.json { head :no_content }
     end
   end

@@ -11,9 +11,9 @@ body {
 }
 
 .page-body { 
+    padding: 0; 
     width: 75%; 
     margin: 0 auto; 
-    padding: 0; 
 }
 
 .header { 
@@ -21,6 +21,7 @@ body {
     height: 30px; 
     border: solid 1px $header-background; 
     color: $border-color; 
+
 
     .selected a, a:hover { 
       color: white; 
@@ -30,24 +31,22 @@ body {
       text-decoration: none; 
     }
 
-    div { 
-      padding: 3px 20px; 
+    div, span { 
+      padding: 3px 17px 3px 20px; 
     }
 
-    .icon { 
-      width: 300px; 
-    }
-
-    .nav-link, .right { 
+    .right { 
       float: right;
     }
 
-    .nav-link { 
-        border-left: solid 1px $border-color; 
-    } 
-
     .left { 
       float: left;
+    } 
+
+    .nav-link { 
+      display: inline-block;
+      border-left: solid 1px $border-color; 
+      text-align: center; 
     } 
 }
 
@@ -84,5 +83,47 @@ body {
 .block-corner-left {
     border-top-left-radius: $radius; 
     border-bottom-left-radius: $radius; 
+}
+
+@media screen and (max-device-width: 1000px) {
+  .page-body { 
+      width: auto; 
+      margin: 0; 
+  }
+
+  body { 
+    background: $content-background; 
+  }
+
+  @media screen and (max-device-width: 520px) {
+    .body { 
+    }
+
+    .page-body { 
+      height: auto; 
+    }
+
+    .header { 
+      height: 40px; 
+
+      .icon { 
+        display: none; 
+      }
+
+      .right { 
+        width: auto; 
+        margin: 0 auto; 
+      }
+
+      span { 
+        padding-left:13px; 
+        padding-right:13px; 
+      }
+
+      span:last-child { 
+        border-right: 1px solid; 
+      }
+    }
+  }
 }
 
