@@ -36,9 +36,9 @@
 </p>
 
 <% if @booking.areSpotsAvaiable %> 
-<%= link_to 'Book', new_booking_person_path(@booking) %> |
+<%= link_to 'Book', new_booking_person_path(@booking), class: "button" %> 
 <% else %>
-<%= link_to 'Book Under 3 Only', new_booking_person_path(@booking) %> |
+<%= link_to 'Book Under 3 Only', new_booking_person_path(@booking), class: "button" %>
 <% end %>
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+<%= link_to 'Edit', edit_booking_path(@booking), class: "button" %>
+<%= link_to 'Back', bookings_path, class: "button"%>
