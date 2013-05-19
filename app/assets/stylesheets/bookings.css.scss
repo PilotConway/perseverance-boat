@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "main.css.scss";
+
 .create-new {
   margin: 0 0 0 auto; 
   width: 100%;
@@ -13,4 +15,7 @@
   float: right;
 }
 
-
+.form-content { 
+	margin: $center;
+	width: auto;
+}
