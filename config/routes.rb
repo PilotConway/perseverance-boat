@@ -1,4 +1,7 @@
 PerseveranceBoat::Application.routes.draw do
+  resources :faqs
+
+
   resources :guests
   resources :roles
   resources :people

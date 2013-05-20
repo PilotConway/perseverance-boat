@@ -1,0 +1,32 @@
+<%= coffee_script_tag do %>
+  $(document).ready ->
+    $('#faq-nav-link').addClass('selected')
+<% end %>
+
+<h1>Frequently Asked Questions</h1>
+
+<ul>
+  <% @faqs.each do |faq| %>
+    <li>
+      <div class="faq" id="<%= faq.id %>">
+        <div class="question">
+          <a href="#" class="faq-link"><%= faq.question %></a>
+        </div>
+        <div class="answer">
+          <p><%= faq.answer %></p>
+        </div>
+      </div>
+    </li>
+    <!--
+    <td><%= link_to 'Show', faq %></td>
+    -->
+    <!-- If Admin, then let these show 
+    <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
+    <td><%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    -->
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Faq', new_faq_path %>
