@@ -19,5 +19,6 @@ closeAllSelectedAnswers = ->
 
 $(document).ready ->
   # FAQ question has been clicked. 
-  $('.question a').click -> 
+  $('.question a').click (e) -> 
+    e.preventDefault()
     handleFAQSelection $(@)
