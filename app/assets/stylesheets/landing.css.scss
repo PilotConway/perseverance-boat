@@ -3,12 +3,11 @@
     @media screen and (max-device-width: 520px) {
       font-size: 18pt; 
     }
-    text-align: center; 
-    width: auto; 
 }
 
 .home-image { 
   width: auto; 
+  padding: 20px;
 
   @media screen and (max-device-width: 520px) {
     width: 100%; 
