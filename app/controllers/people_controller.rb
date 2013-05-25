@@ -59,19 +59,32 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
+    success = false
     if @booking 
-      @person = @booking.people.create(params[:person])
+      begin
+        @person = @booking.people.create(params[:person])
+        logger.debug("Created person")
+        success = true
+      rescue 
+        logger.debug("Failed to create person")
+      end
     else
       @person = Person.new(params[:person])
+      success = true
     end
 
     respond_to do |format|
-      if @person.save
-        format.html { redirect_to @booking, notice: 'Person was successfully created.' }
-        format.json { render json: @person, status: :created, location: @person }
-      else
-        format.html { render action: "new" }
+      if not success
+        format.html { redirect_to @booking, alert: 'Error adding person to booking.' }
         format.json { render json: @person.errors, status: :unprocessable_entity }
+      else
+        if @person.save
+          format.html { redirect_to @booking, notice: "#{@person.first_name} sucessfully added to trip" }
+          format.json { render json: @person, status: :created, location: @person }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @person.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

@@ -1,8 +1,13 @@
+<h1 class="content-header">Trip on <%= @booking.start.strftime("%m/%d/%Y") %></h1>
 <div class="center-content form-content">
   <div class="form">
-    <h1>Trip on <%= @booking.start.strftime("%m/%d/%Y") %></h1>
-
-    <p id="notice"><%= notice %></p>
+    <!--<p id="notice"><%= notice %></p>-->
+    <% if flash[:alert] %>
+      <p class="flash-error"><%= flash[:alert] %></p>
+    <% end %>
+    <% if flash[:notice] %>
+      <p id="notice" class="flash-notice"><%= flash[:notice] %></p>
+    <% end %>
     <p>
       <b>Start time:</b>
       <%= @booking.start.strftime("%l:%M:%S %p") %>
@@ -22,7 +27,7 @@
 
     <p>
       <b>Spots Available:</b>
-      <% if @booking.areSpotsAvaiable %> 
+      <% if @booking.areSpotsAvailable %> 
         <%= @booking.getSpotsAvailable %>
       <% else %>
         Trip is Full
@@ -41,7 +46,7 @@
       <% end %>
     </p>
 
-    <% if @booking.areSpotsAvaiable %> 
+    <% if @booking.areSpotsAvailable %> 
     <%= link_to 'Book', new_booking_person_path(@booking), class: "button" %> 
     <% else %>
     <%= link_to 'Book Under 3 Only', new_booking_person_path(@booking), class: "button" %>

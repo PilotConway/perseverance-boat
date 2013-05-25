@@ -4,7 +4,8 @@ class Booking < ActiveRecord::Base
   attr_accessible :end, :num_people, :start
   has_one :destination
   has_many :guests
-  has_many :people, :through => :guests, after_add: :validateSpotsAvaiable
+  has_many :people, :through => :guests
+  validates_associated :guests
 
   def getSpotsAvailable
     if num_people && people 
@@ -14,7 +15,7 @@ class Booking < ActiveRecord::Base
     end
   end
 
-  def areSpotsAvaiable
+  def areSpotsAvailable
     if @spots_available > 0 
       true
     else 
