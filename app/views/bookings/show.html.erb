@@ -1,13 +1,17 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <b>Start time:</b>
-  <%= @booking.start %>
-</p>
-
-<p>
-  <b>End time:</b>
-  <%= @booking.end %>
-</p>
+<h1 class="content-header">Trip on <%= @booking.start.strftime("%m/%d/%Y") %></h1>
+<div class="center-content form-content">
+  <div class="form">
+    <!--<p id="notice"><%= notice %></p>-->
+    <% if flash[:alert] %>
+      <p class="flash-error"><%= flash[:alert] %></p>
+    <% end %>
+    <% if flash[:notice] %>
+      <p id="notice" class="flash-notice"><%= flash[:notice] %></p>
+    <% end %>
+    <p>
+      <b>Start time:</b>
+      <%= @booking.start.strftime("%l:%M:%S %p") %>
+    </p>
 
 <p>
   <b>Num people:</b>
@@ -19,6 +23,7 @@
   <%= @booking.getSpotsAvailable %>
 </p>
 
+<<<<<<< Updated upstream
 <p>
   <b>Guests:</b>
   <ul>
@@ -34,3 +39,35 @@
 <%= link_to 'Book', new_booking_person_path(@booking) %> |
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>
+=======
+    <p>
+      <b>Spots Available:</b>
+      <% if @booking.areSpotsAvailable %> 
+        <%= @booking.getSpotsAvailable %>
+      <% else %>
+        Trip is Full
+      <% end %>
+    </p>
+
+    <p>
+      <b>Booked Guests:</b>
+      <ul>
+      <% @booking.people.each do |p| %>
+        <li><%= link_to "#{p.first_name} #{p.last_name}", booking_person_path(@booking, p) %> | <%= link_to 'Remove', booking_person_path(@booking, p), confirm: "Are You Sure", method: :delete %></li> 
+      <% end %>
+      </ul>
+      <% if @booking.people.empty? %>
+        <em>No Guests</em>
+      <% end %>
+    </p>
+
+    <% if @booking.areSpotsAvailable %> 
+    <%= link_to 'Book', new_booking_person_path(@booking), class: "button" %> 
+    <% else %>
+    <%= link_to 'Book Under 3 Only', new_booking_person_path(@booking), class: "button" %>
+    <% end %>
+    <%= link_to 'Edit', edit_booking_path(@booking), class: "button" %>
+  <%= link_to 'Back', bookings_path, class: "button"%>
+  </div>
+</div>
+>>>>>>> Stashed changes

@@ -5,13 +5,13 @@ class Booking < ActiveRecord::Base
   has_one :destination
   has_many :guests
   has_many :people, :through => :guests
-  before_update :areSpotsAvaiable
+  validates_associated :guests
 
   def getSpotsAvailable
     @spots_available = num_people - people.length
   end
 
-  def areSpotsAvaiable
+  def areSpotsAvailable
     if @spots_available > 0 
       true
     else 
