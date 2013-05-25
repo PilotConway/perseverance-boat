@@ -197,3 +197,9 @@ body {
     text-decoration: none; 
   }
 }
+
+/* Errors and Notices on Forms */
+.flash-error { 
+  font-weight: bold;
+  color: red; 
+}
