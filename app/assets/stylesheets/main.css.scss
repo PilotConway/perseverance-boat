@@ -5,6 +5,7 @@ $content-background: rgba(255,255,255,1);
 $header-background: rgba(0,0,0,1); 
 $border-color: rgba(184, 184, 184, .5); 
 $center: 0 auto; 
+$header-height: 30px; 
 
 .group:after {
   visibility: hidden;
@@ -33,9 +34,11 @@ body {
 
 .header { 
     background: $header-background; 
-    height: 30px; 
+    height: $header-height; 
     border: solid 1px $header-background; 
     color: $border-color; 
+    position: fixed; 
+    width: 75%;
 
     .selected a, a:hover { 
       color: white; 
@@ -68,14 +71,18 @@ body {
     } 
 }
 
+.content-header { 
+  width: 60%; 
+  margin: $center;
+  padding: 20px; 
+  text-align: center;
+}
+
 .content { 
     background: $content-background; 
     border: solid 1px $border-color; 
     border-top: solid 0px; 
-}
-
-.center-content {
-    padding: 20px; 
+    padding: $header-height+10px 30px 30px 30px; 
 }
 
 .block-corner-large-right {
@@ -120,6 +127,7 @@ body {
 
     .header { 
       height: 40px; 
+      width: 100%; 
 
       .right { 
         padding-top:8px; 
@@ -188,4 +196,10 @@ body {
   a { 
     text-decoration: none; 
   }
+}
+
+/* Errors and Notices on Forms */
+.flash-error { 
+  font-weight: bold;
+  color: red; 
 }
