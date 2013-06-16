@@ -1,7 +1,5 @@
 PerseveranceBoat::Application.routes.draw do
   resources :faqs
-
-
   resources :guests
   resources :roles
   resources :people
@@ -11,7 +9,9 @@ PerseveranceBoat::Application.routes.draw do
     resources :people
   end
 
-  root :to => 'landing#index'
+  root :to => 'landing#index' 
+
+  match 'gallery' => 'gallery#index', as: :gallery
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
