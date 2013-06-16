@@ -11,6 +11,6 @@ class BookingMailer < ActionMailer::Base
     @booking = booking
     date = @booking.start.strftime("%m/%d/%Y")
 
-    mail to: "john@johnconwayiv.com", subject: "New Booking for #{date}"
+    mail to: "perseverance@the-conways.com", subject: "New Booking for #{date}"
   end
 end
