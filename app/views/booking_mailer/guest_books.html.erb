@@ -1,0 +1,18 @@
+<h1>Awesome, Someone likes you enough to book a trip on your boat!</h1>
+
+<p>Checkout out the booking on <%= link_to "PerseveranceBoat.com", booking_url(@booking.id) %></p>
+
+<ul>
+    <li>Booking: <%= @booking.start.strftime("%m/%d/%Y %l:%M:%S %p") %></li>
+    <li>Name: <%= @guest.first_name %> <%= @guest.last_name %></li>
+    <li>Email: <%= @guest.email %></li>
+    <li>Phone: <%= @guest.phone %></li>
+    <li>Preferred Contact Method: <%= @guest.preferred_contact %></li>
+    <li>Over Three?: <%= @guest.over_three %></li>
+</ul>
+
+<p>Congrats,</p>
+<br/>
+SAWEE<br/>
+Superawesome Automagic Website Emailer Engine<br/>
+perseveranceboat.com<br/>

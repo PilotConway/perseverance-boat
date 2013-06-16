@@ -9,7 +9,8 @@ class BookingMailer < ActionMailer::Base
   def guest_books(booking, guest)
     @guest = guest
     @booking = booking
+    date = @booking.start.strftime("%m/%d/%Y")
 
-    mail to: "john@johnconwayiv.com", subject: "New Booking"
+    mail to: "john@johnconwayiv.com", subject: "New Booking for #{date}"
   end
 end
