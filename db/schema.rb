@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521021742) do
+ActiveRecord::Schema.define(:version => 20130619232149) do
 
   create_table "bookings", :force => true do |t|
     t.datetime "start"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20130521021742) do
     t.string   "email"
     t.string   "phone"
     t.string   "preferred_contact"
-    t.boolean  "over_three"
+    t.boolean  "under_three"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "booking_id"
