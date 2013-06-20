@@ -6,6 +6,7 @@
 .create-new {
   margin: 0 0 0 auto; 
   width: 100%;
+  padding-bottom: 25px;
 }
 
 .create-button { 
@@ -14,13 +15,3 @@
   float: right;
 }
 
-.form-content { 
-    display: inline-block;
-	margin: $center;
-  width: auto; 
-}
-
-.form { 
-  margin: $center;    
-  width: auto; 
-}  

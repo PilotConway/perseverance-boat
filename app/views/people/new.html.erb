@@ -1,9 +1,15 @@
-<h1>Guest Information</h1>
-<p>Please fill out your information to book the trip. Contact information 
-    is only used to contact you if needed before the trip or to notify you 
-    of changes to the booking. Also please check the under 3 checkbox if 
-    this information if for a child under the age of three.</p>
+<h1 class="content-header">Guest Information</h1>
 
-<%= render 'form' %>
+<div class="form-content">
+    <p>Please fill out your information to book the trip. Contact information 
+        is only used to contact you if needed before the trip or to notify you 
+        of changes to the booking. Also please check the under 3 checkbox if 
+        this information if for a child under the age of three.</p>
 
-<%= link_to 'Back', @booking, class: "button" %>
+    <%= render 'form' %>
+
+
+    <div class="center-content back-button">
+        <%= link_to 'Back', @booking, class: "button" %>
+    </div>
+</div>

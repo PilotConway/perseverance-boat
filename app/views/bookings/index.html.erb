@@ -6,11 +6,20 @@
     $('#book-nav-link').addClass('selected')
 <% end %>
 
-<h1 class="content-header">Book a Trip</h1>
-<div class="create-new">
-  <div class="create-button button">
-    <%= link_to "Create", new_booking_path %>
-  </div>
+<div>
+    <h1 class="content-header">Book a Trip</h1>
+    <p>Welcome! Below are a list of dates and how many open spots are available 
+        for that date. To book a trip on the boat, click on the day you would 
+        like to book. You can also see who else has booked a trip by clicking on 
+        it.
+    </p>
+
+    <div id='calendar'></div>
+
+    <div class="create-new">
+      <div class="create-button button">
+        <%= link_to "Create", new_booking_path %>
+      </div>
+    </div>
 </div>
-<div id='calendar'></div>
 
