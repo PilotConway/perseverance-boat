@@ -8,6 +8,9 @@
     <% if flash[:notice] %>
       <p id="notice" class="flash-notice"><%= flash[:notice] %></p>
     <% end %>
+    <p>To add yourself to this trip, click the book button below.
+      Please add a booking for each person you will be bringing with you, even 
+
     <p>
       <b>Start time:</b>
       <%= @booking.start.strftime("%l:%M:%S %p") %>
@@ -28,7 +31,7 @@
     <p>
       <b>Spots Available:</b>
       <% if @booking.areSpotsAvailable %> 
-        <%= @booking.getSpotsAvailable %>
+        <%= @booking.getSpotsAvailable %> 
       <% else %>
         Trip is Full
       <% end %>
