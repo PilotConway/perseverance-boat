@@ -28,6 +28,10 @@ class Booking < ActiveRecord::Base
   end
 
   def title
-    "#{@spots_available} Spots Available"
+    if @spots_available == 1 
+      "#{@spots_available} Spot Available"
+    else 
+      "#{@spots_available} Spots Available"
+    end
   end
 end
