@@ -23,14 +23,6 @@ class Booking < ActiveRecord::Base
     end
   end 
 
-  def validateSpotsAvaiable(person)
-    if person.over_three
-      areSpotsAvaiable
-    else
-      true
-    end
-  end
-
   def as_json(options={})
       super(:methods => :title)
   end

@@ -6,7 +6,7 @@ class Guest < ActiveRecord::Base
   after_create :booking_notification
 
   def checkAvailability
-    if person.over_three and not booking.areSpotsAvailable()
+    if not person.under_three and not booking.areSpotsAvailable()
       errors.add(:alert, "There are no spots left on this booking.")
     end
   end
