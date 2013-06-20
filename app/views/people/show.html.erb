@@ -26,8 +26,11 @@
 </p>
 
 <p>
-  <b>Over three:</b>
-  <%= @person.over_three %>
+  <% if @person.under_three %>
+    <b>Guest is younger than 3 years old.</b>
+  <% else %>
+    <b>Guest is older than 3 years old.</b>
+  <% end %>
 </p>
 
 
