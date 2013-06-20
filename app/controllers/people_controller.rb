@@ -60,13 +60,19 @@ class PeopleController < ApplicationController
   # POST /people.json
   def create
     success = false
+    error_msg = ""
     if @booking 
       begin
         @person = @booking.people.create(params[:person])
         logger.debug("Created person")
         success = true
-      rescue 
-        logger.debug("Failed to create person")
+      rescue ActiveRecord::RecordInvalid => invalid 
+        msg = invalid.record.errors.get(:alert).first
+        error_msg = "Failed to create guest booking: #{msg}"
+        logger.error(error_msg)
+      rescue Exception => e
+        error_msg = "Failed to create guest booking: An unknown error occurred"
+        logger.error(error_msg + " #{e}")
       end
     else
       @person = Person.new(params[:person])
@@ -75,7 +81,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if not success
-        format.html { redirect_to @booking, alert: 'Error adding person to booking.' }
+        format.html { redirect_to @booking, alert: error_msg } 
         format.json { render json: @person.errors, status: :unprocessable_entity }
       else
         if @person.save
