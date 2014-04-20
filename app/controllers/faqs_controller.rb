@@ -42,15 +42,16 @@ class FaqsController < ApplicationController
   def create
     @faq = Faq.new(params[:faq])
 
-    respond_to do |format|
-      if @faq.save
-        format.html { redirect_to @faq, notice: 'Faq was successfully created.' }
-        format.json { render json: @faq, status: :created, location: @faq }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @faq.errors, status: :unprocessable_entity }
-      end
-    end
+    # For now, don't allow anyone to create new FAQ posts
+    #respond_to do |format|
+    #  if @faq.save
+    #    format.html { redirect_to @faq, notice: 'Faq was successfully created.' }
+    #    format.json { render json: @faq, status: :created, location: @faq }
+    #  else
+    #    format.html { render action: "new" }
+    #    format.json { render json: @faq.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PUT /faqs/1
